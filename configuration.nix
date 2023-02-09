@@ -72,14 +72,20 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+  environment.shells = with pkgs; [ zsh ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.louis = {
     isNormalUser = true;
     description = "Louis Hurschler";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       firefox
       kate
+      google-chrome
     #  thunderbird
     ];
   };
@@ -97,12 +103,17 @@
 	alacritty
 	git
 	github-cli
+
+  gcc
+  lldb
+  clang-tools
 	
 	starship
 	
 	zathura
 	spotify
 
+  unzip
 	exa
 	ripgrep
 	ripgrep-all
@@ -111,6 +122,8 @@
 	du-dust
   procs
   tealdeer
+
+  oh-my-zsh
 	
   ];
 
