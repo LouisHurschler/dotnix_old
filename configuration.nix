@@ -55,6 +55,7 @@
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
+  hardware.bluetooth.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -107,6 +108,16 @@
   gcc
   lldb
   clang-tools
+  gnumake
+  cmake
+
+  python310
+  python310Packages.ipython
+  python310Packages.python-lsp-server
+  python310Packages.numpy
+  python310Packages.matplotlib
+
+  qemu
 	
 	starship
 	
@@ -123,7 +134,6 @@
   procs
   tealdeer
 
-  oh-my-zsh
 	
   ];
 
