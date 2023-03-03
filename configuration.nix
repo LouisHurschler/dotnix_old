@@ -11,7 +11,7 @@
     ];
     
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -44,6 +44,10 @@
   services.xserver = {
     layout = "ch";
     xkbVariant = "";
+
+    # not working, has to be done manually
+    # setxkbmap -option caps:swapescape 
+    # xkbOptions = "caps:swapescape";
   };
 
   # Configure console keymap
@@ -73,7 +77,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  programs.zsh.enable = true;
+  # programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
 
@@ -94,48 +98,10 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-	helix
-	zellij
-	alacritty
-	git
-	github-cli
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;
+  environment.systemPackages = with pkgs; [ virt-manager ];
 
-  gcc
-  lldb
-  clang-tools
-  gnumake
-  cmake
-
-  python310
-  python310Packages.ipython
-  python310Packages.python-lsp-server
-  python310Packages.numpy
-  python310Packages.matplotlib
-
-  qemu
-	
-	starship
-	
-	zathura
-	spotify
-
-  unzip
-	exa
-	ripgrep
-	ripgrep-all
-	fd
-	sd
-	du-dust
-  procs
-  tealdeer
-
-	
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
