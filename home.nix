@@ -76,6 +76,8 @@
 	zathura
 	spotify
   xournalpp
+  joplin
+  joplin-desktop
 
   unzip
 	exa
