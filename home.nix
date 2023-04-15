@@ -50,7 +50,9 @@
 	alacritty
 	git
 	github-cli
+  ifuse
 
+  rustup
   # gcc
   # lldb
   # clang-tools
@@ -80,6 +82,7 @@
   joplin-desktop
 
   unzip
+  p7zip
 	exa
 	ripgrep
 	ripgrep-all

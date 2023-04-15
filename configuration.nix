@@ -40,6 +40,8 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
+  services.xserver.desktopManager.plasma5.excludePackages = with pkgs.libsForQt5; [];
+
   # Configure keymap in X11
   services.xserver = {
     layout = "ch";
@@ -48,6 +50,14 @@
     # not working, has to be done manually
     # setxkbmap -option caps:swapescape 
     # xkbOptions = "caps:swapescape";
+  };
+
+
+
+
+  services.usbmuxd = {
+    enable = true;
+    package = pkgs.usbmuxd2;
   };
 
   # Configure console keymap
@@ -100,7 +110,12 @@
 
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
-  environment.systemPackages = with pkgs; [ virt-manager ];
+  environment.systemPackages = with pkgs; [
+    virt-manager
+    libimobiledevice
+    ifuse
+  ];
+
 
 
   # Some programs need SUID wrappers, can be configured further or are
