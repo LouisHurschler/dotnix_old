@@ -51,7 +51,6 @@
 	git
 	github-cli
   ifuse
-  texmaker
 
   rustup
   # gcc
