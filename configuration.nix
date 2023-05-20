@@ -40,7 +40,6 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
-  services.xserver.desktopManager.plasma5.excludePackages = with pkgs.libsForQt5; [];
 
   # Configure keymap in X11
   services.xserver = {
@@ -87,7 +86,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # programs.zsh.enable = true;
+  programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
 
@@ -114,6 +113,7 @@
     virt-manager
     libimobiledevice
     ifuse
+    modemmanager
   ];
 
 

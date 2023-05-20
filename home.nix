@@ -72,6 +72,8 @@
   # eigen
 
   qemu
+  typst
+  typst-lsp
 	
 	starship
 	
