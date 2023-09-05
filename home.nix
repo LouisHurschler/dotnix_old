@@ -60,6 +60,9 @@
   # cmake
   # gdb
 
+  wimlib
+  ventoy
+
   # tcsh
   
   # (python3.withPackages (ps: with ps; [
